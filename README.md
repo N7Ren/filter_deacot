@@ -8,7 +8,7 @@ Input:
 - Year passed on the command line, for example `2024`
 
 Output:
-- `filtered_data_<year>.csv` (for example `filtered_data_2024.csv`)
+- `reports/filtered_data_<year>.csv` (for example `reports/filtered_data_2024.csv`)
 - A row count message in the terminal after filtering
 
 ## Prerequisites
@@ -39,7 +39,7 @@ python filter_deacot.py 2024
 Expected output includes:
 
 - `Rows after filtering: ...`
-- `Filtered data saved to filtered_data_2024.csv`
+- `Filtered data saved to reports/filtered_data_2024.csv`
 
 ## Troubleshooting
 

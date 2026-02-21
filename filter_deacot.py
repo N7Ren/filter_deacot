@@ -1,4 +1,5 @@
 import sys
+from pathlib import Path
 import pandas as pd
 import cot_reports as cot
 
@@ -23,10 +24,12 @@ def main():
     filtered_df = df[df["CFTC Contract Market Code"].isin(markets)].reset_index(drop=True)
 
     print(f"Rows after filtering: {len(filtered_df)}")
-    filtered_df.to_csv(f"filtered_data_{year}.csv", index=False)
-    print(f"Filtered data saved to filtered_data_{year}.csv")
+    reports_dir = Path("reports")
+    reports_dir.mkdir(exist_ok=True)
+    output_path = reports_dir / f"filtered_data_{year}.csv"
+    filtered_df.to_csv(output_path, index=False)
+    print(f"Filtered data saved to {output_path}")
 
 if __name__ == "__main__":
     main()
-
 
